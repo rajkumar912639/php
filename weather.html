@@ -1,0 +1,17 @@
+<html>
+<body>
+    <h1>Weather query</h1>
+<?php
+if ( 'post' === strtolower($_SERVER['REQUEST_METHOD'])) {
+?>
+    <h2><?php echo file_get_contents('https://api.openweathermap.org/data/2.5/weather?mode=xml&units=metric&q=London&appid=YOUR_API_KEY'); ?></h2>
+<?php
+} else {
+    ?>
+    <form method="post">
+        <input type="submit" value="Get London's temperature">
+    </form>
+<?php
+}?>
+</body>
+</html>
